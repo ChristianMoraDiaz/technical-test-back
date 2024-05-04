@@ -1,7 +1,7 @@
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
-import diaryRouter from "./routes/employee";
+import employeeRouter from "./routes/employee";
 
 dotenv.config();
 
@@ -17,7 +17,7 @@ app.get("/ping", (_req, res) => {
   res.send("pong");
 });
 
-app.use("/api/employee", diaryRouter);
+app.use("/api/employee", employeeRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running in ${PORT}`);
