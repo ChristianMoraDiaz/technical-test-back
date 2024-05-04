@@ -3,7 +3,6 @@ import { validationResult } from "express-validator";
 import { prismaDB } from "../db";
 
 export const gettAllEmployeesService = async (_req: Request, res: Response) => {
-  console.log("HOLA");
   try {
     const response = await prismaDB.employee.findMany({
       select: {
@@ -27,7 +26,6 @@ export const gettAllEmployeesService = async (_req: Request, res: Response) => {
     });
     return res.status(200).json(response);
   } catch (error) {
-    console.log(error);
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
