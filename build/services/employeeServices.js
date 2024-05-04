@@ -13,6 +13,7 @@ exports.updateEmployeeService = exports.createEmployeeService = exports.getEmplo
 const express_validator_1 = require("express-validator");
 const db_1 = require("../db");
 const gettAllEmployeesService = (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log("HOLA");
     try {
         const response = yield db_1.prismaDB.employee.findMany({
             select: {
